@@ -2,8 +2,8 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const {isAddress} = require("ethers");
-const Distribute = require("./distribute");
-const Balance = require("./balance");
+const Distribute = require("../src/distribute");
+const Balance = require("../src/balance");
 const {json, urlencoded} = require("express");
 
 /**
