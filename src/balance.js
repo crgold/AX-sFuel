@@ -1,4 +1,4 @@
-const { JsonRpcProvider, Wallet } = require("ethers");
+const { JsonRpcProvider, Wallet, utils } = require("ethers");
 
 const {
     PRIVATE_KEY,
@@ -10,7 +10,7 @@ const wallet = new Wallet(PRIVATE_KEY, provider);
 
 async function Balance() {
     const balance = await provider.getBalance(wallet.address);
-    return parseFloat(balance.toString()); // Convert BigNumber to a number
+    return parseFloat(utils.formatUnits(balance, 18)); // Convert to a float
 	//return balance.toString(); // Convert BigNumber to string
 }
 
