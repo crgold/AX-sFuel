@@ -42,7 +42,4 @@ app.get("/balance", async(_, res) => {
 	});
 });
 
-
-app.listen(8888, () => {
-	console.log("SKALE API Distributor Listening on ", 8888);
-});
+module.exports = app;
