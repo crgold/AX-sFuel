@@ -6,10 +6,9 @@ const {
 } = require("./config");
 
 const provider = new JsonRpcProvider(RPC_URL);
-const wallet = new Wallet(PRIVATE_KEY, provider);
 
-async function getUserBalance() {
-    const balance = await provider.getBalance(wallet.address);
+async function getUserBalance({ address }) {
+    const balance = await provider.getBalance(address);
     return parseFloat(formatEther(balance));
 }
 
