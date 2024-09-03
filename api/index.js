@@ -41,7 +41,7 @@ app.get("/balance", async(_, res) => {
 	});
 });
 
-app.get("/balance/:address", async(_, res) => {
+app.get("/balance/:address", async(req, res) => {
 
 	const { address } = req.params;
 
