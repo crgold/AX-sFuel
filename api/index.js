@@ -4,6 +4,7 @@ const cors = require("cors");
 const {isAddress} = require("ethers");
 const Distribute = require("../src/distribute");
 const Balance = require("../src/balance");
+const getUserBalance = require("../src/userBalance");
 const {json, urlencoded} = require("express");
 
 /**
@@ -32,13 +33,22 @@ app.get("/claim/:address", async(req, res) => {
 	return res.status(200).send({
 		distribute
 	});
-
-
 });
 
 app.get("/balance", async(_, res) => {
 	return res.status(200).send({
 		balance: await Balance()
+	});
+});
+
+app.get("/balance/:address", async(_, res) => {
+
+	const { address } = req.params;
+
+	if (!isAddress(address)) return res.status(400).send("Invalid Ethereum Address");
+
+	return res.status(200).send({
+		balance: await getUserBalance({ address })
 	});
 });
 
