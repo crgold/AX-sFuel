@@ -2,6 +2,7 @@ const { createThirdwebClient, getContract, prepareContractCall, sendAndConfirmTr
 const { defineChain } = require("thirdweb/chains");
 
 const {
+    PRIVATE_KEY,
     SECRET_KEY
 } = require("./config");
 
@@ -17,6 +18,11 @@ async function mintMaterial({ address, tokenId, amount }) {
     chain: defineChain(37084624), 
     address: "0x0b34cE9c9dbE5a4894c0acb7fb29Eb34cE079A44"
     });
+
+    const account = privateKeyToAccount({
+        client,
+        privateKey: PRIVATE_KEY,
+      });
 
     const transaction = await prepareContractCall({ 
     contract, 
