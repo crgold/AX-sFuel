@@ -111,7 +111,7 @@ app.get("/batchMint/:address/:tokenIds/:amounts", async (req, res) => {
 	});
   });
 
-  app.get("/balance/:address/:tokenId/", async(req, res) => {
+  app.get("/balance/:address/:tokenId", async(req, res) => {
 
 	const { address, tokenId } = req.params;
 
@@ -132,7 +132,7 @@ app.get("/batchMint/:address/:tokenIds/:amounts", async (req, res) => {
 	});
 });
 
-app.get("/balances/:addresses/:tokenIds/", async(req, res) => {
+app.get("/balances/:addresses/:tokenIds", async(req, res) => {
 
 	const { addresses, tokenIds } = req.params;
 
