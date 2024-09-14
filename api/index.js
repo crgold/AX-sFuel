@@ -6,9 +6,9 @@ const Distribute = require("../src/distribute");
 const Balance = require("../src/balance");
 const getUserBalance = require("../src/userBalance");
 const mintMaterial = require('../src/mintMaterial')
-const batchMintMaterial = require('../src/batchMintMaterial');
+//const batchMintMaterial = require('../src/batchMintMaterial');
 const getMaterialBalance = require('../src/materialBalance');
-const getBatchMaterialBalance = require('../src/batchMaterialBalance');
+//const getBatchMaterialBalance = require('../src/batchMaterialBalance');
 const {json, urlencoded} = require("express");
 
 /**
