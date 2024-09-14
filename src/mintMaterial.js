@@ -1,5 +1,6 @@
 const { createThirdwebClient, getContract, prepareContractCall, sendAndConfirmTransaction } = require("thirdweb");
 const { defineChain } = require("thirdweb/chains");
+const { privateKeyToAccount } = require("thirdweb/wallets");
 
 const {
     PRIVATE_KEY,
