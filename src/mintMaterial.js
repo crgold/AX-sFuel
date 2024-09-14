@@ -31,10 +31,12 @@ async function mintMaterial({ address, tokenId, amount }) {
     params: [address, tokenId, "", amount] 
     });
 
-    return await sendAndConfirmTransaction({ 
-    transaction, 
-    account 
+    const result = await sendAndConfirmTransaction({ 
+        transaction, 
+        account 
     });
+
+    return result.transactionHash;
 }
 
 module.exports = mintMaterial;
