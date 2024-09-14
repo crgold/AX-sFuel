@@ -125,10 +125,10 @@ app.get("/batchMint/:address/:tokenIds/:amounts", async (req, res) => {
 	};
 
 	return res.status(200).send({
-		balance: await getMaterialBalance({
+		balance: Number(await getMaterialBalance({
 			address,
 			tokenId
-		})
+		}))
 	});
 });
 
@@ -160,10 +160,10 @@ app.get("/balances/:addresses/:tokenIds", async(req, res) => {
 	};
 
 	return res.status(200).send({
-		balance: Number(await getBatchMaterialBalance({
+		balance: await getBatchMaterialBalance({
 			addresses,
 			tokenIds
-		}))
+		})
 	});
 });
 
