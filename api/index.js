@@ -79,7 +79,28 @@ app.get("/mint/:address/:tokenId/:amount", async(req, res) => {
 	});
 });
 
-app.get("/batchMint/:address/:tokenIds/:amounts", async (req, res) => {
+  app.get("/balance/:address/:tokenId", async(req, res) => {
+
+	const { address, tokenId } = req.params;
+
+	if (!isAddress(address)) return res.status(400).send("Invalid Ethereum Address");
+
+	// Check if tokenId and amount are integers
+	const tokenIdInt = Number(tokenId);
+  
+	if (!Number.isInteger(tokenIdInt)) {
+	  return res.status(400).send("tokenId and amount must be valid integers");
+	};
+
+	return res.status(200).send({
+		balance: Number(await getMaterialBalance({
+			address,
+			tokenId
+		}))
+	});
+});
+
+/*app.get("/batchMint/:address/:tokenIds/:amounts", async (req, res) => {
 	const { address, tokenIds, amounts } = req.params;
   
 	// Check if address is valid
@@ -110,27 +131,6 @@ app.get("/batchMint/:address/:tokenIds/:amounts", async (req, res) => {
 		})
 	});
   });
-
-  app.get("/balance/:address/:tokenId", async(req, res) => {
-
-	const { address, tokenId } = req.params;
-
-	if (!isAddress(address)) return res.status(400).send("Invalid Ethereum Address");
-
-	// Check if tokenId and amount are integers
-	const tokenIdInt = Number(tokenId);
-  
-	if (!Number.isInteger(tokenIdInt)) {
-	  return res.status(400).send("tokenId and amount must be valid integers");
-	};
-
-	return res.status(200).send({
-		balance: Number(await getMaterialBalance({
-			address,
-			tokenId
-		}))
-	});
-});
 
 app.get("/balances/:addresses/:tokenIds", async(req, res) => {
 
@@ -167,4 +167,4 @@ app.get("/balances/:addresses/:tokenIds", async(req, res) => {
 	});
 });
 
-module.exports = app;
+module.exports = app;*/
