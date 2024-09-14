@@ -3,7 +3,9 @@ const { defineChain } = require("thirdweb/chains");
 
 const {
     SECRET_KEY
-  } = require("./config");
+} = require("./config");
+
+console.error(SECRET_KEY);
 
 async function getMaterialBalance({ address, tokenId }) {
     // create the client with your clientId, or secretKey if in a server environment
