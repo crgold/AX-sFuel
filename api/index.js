@@ -160,10 +160,10 @@ app.get("/balances/:addresses/:tokenIds", async(req, res) => {
 	};
 
 	return res.status(200).send({
-		balance: await getBatchMaterialBalance({
+		balance: Number(await getBatchMaterialBalance({
 			addresses,
 			tokenIds
-		})
+		}))
 	});
 });
 
