@@ -165,6 +165,6 @@ app.get("/balances/:addresses/:tokenIds", async(req, res) => {
 			tokenIds
 		})
 	});
-});
+});*/
 
-module.exports = app;*/
+module.exports = app;
