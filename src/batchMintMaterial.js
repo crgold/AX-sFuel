@@ -1,5 +1,5 @@
-import { createThirdwebClient, getContract, prepareContractCall, sendAndConfirmTransaction } from "thirdweb";
-import { defineChain } from "thirdweb/chains";
+const { createThirdwebClient, getContract, prepareContractCall, sendAndConfirmTransaction } = require("thirdweb");
+const { defineChain } = require("thirdweb/chains");
 
 const {
     SECRET_KEY

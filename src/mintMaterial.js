@@ -1,5 +1,5 @@
-import { createThirdwebClient, getContract, prepareContractCall, sendAndConfirmTransaction } from "thirdweb";
-import { defineChain } from "thirdweb/chains";
+const { createThirdwebClient, getContract, prepareContractCall, sendAndConfirmTransaction } = require("thirdweb");
+const { defineChain } = require("thirdweb/chains");
 
 const {
     SECRET_KEY
@@ -23,7 +23,7 @@ async function mintMaterial({ address, tokenId, amount }) {
     method: "function mintTo(address _to, uint256 _tokenId, string _tokenURI, uint256 _amount)", 
     params: [address, tokenId, "", amount] 
     });
-    
+
     return await sendAndConfirmTransaction({ 
     transaction, 
     account 

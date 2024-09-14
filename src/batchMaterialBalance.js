@@ -1,5 +1,5 @@
-import { createThirdwebClient, getContract, readContract } from "thirdweb";
-import { defineChain } from "thirdweb/chains";
+const { createThirdwebClient, getContract, readContract } = require("thirdweb");
+const { defineChain } = require("thirdweb/chains");
 
 const {
   SECRET_KEY

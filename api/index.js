@@ -56,7 +56,7 @@ app.get("/balance/:address", async(req, res) => {
 	});
 });
 
-app.get("/mint/:address/:tokenId/:amount"), async(req, res) => {
+app.get("/mint/:address/:tokenId/:amount", async(req, res) => {
 
 	const { address, tokenId, amount } = req.params;
 
@@ -77,7 +77,7 @@ app.get("/mint/:address/:tokenId/:amount"), async(req, res) => {
 			amount
 		})
 	});
-}
+});
 
 app.get("/batchMint/:address/:tokenIds/:amounts", async (req, res) => {
 	const { address, tokenIds, amounts } = req.params;
@@ -111,7 +111,7 @@ app.get("/batchMint/:address/:tokenIds/:amounts", async (req, res) => {
 	});
   });
 
-  app.get("/balance/:address/:tokenId/"), async(req, res) => {
+  app.get("/balance/:address/:tokenId/", async(req, res) => {
 
 	const { address, tokenId } = req.params;
 
@@ -130,9 +130,9 @@ app.get("/batchMint/:address/:tokenIds/:amounts", async (req, res) => {
 			tokenId
 		})
 	});
-}
+});
 
-app.get("/balances/:addresses/:tokenIds/"), async(req, res) => {
+app.get("/balances/:addresses/:tokenIds/", async(req, res) => {
 
 	const { addresses, tokenIds } = req.params;
 
@@ -165,6 +165,6 @@ app.get("/balances/:addresses/:tokenIds/"), async(req, res) => {
 			tokenIds
 		})
 	});
-}
+});
 
 module.exports = app;
